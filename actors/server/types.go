@@ -26,11 +26,18 @@ type RoomRemove struct {
 }
 
 type RoomJoin struct {
+	playerID   float64
 	roomPID    *actor.PID
 	sessionPID *actor.PID
 }
 
 type Player struct {
-	x float32
-	y float32
+	id    float64
+	pid   *actor.PID
+	name  string
+	x     float64
+	y     float64
+	dx    float64
+	dy    float64
+	speed float64
 }

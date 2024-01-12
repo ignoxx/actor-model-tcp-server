@@ -66,9 +66,13 @@ func (s *Server) Receive(c *actor.Context) {
 		for pid := range s.rooms {
 			fmt.Println("RoomJoin", pid)
 			msg.roomPID = pid
-			c.Send(pid, msg)
+			c.Send(c.Sender(), msg)
 			break
 		}
+
+    case PlayerMoveRequest:
+        fmt.Println("PlayerMoveRequest")
+
 	}
 
 }
